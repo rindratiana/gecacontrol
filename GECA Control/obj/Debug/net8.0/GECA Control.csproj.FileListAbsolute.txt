@@ -1,0 +1,47 @@
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\GECA Control.exe
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\GECA Control.deps.json
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\GECA Control.runtimeconfig.json
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\GECA Control.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\GECA Control.pdb
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\GECA Control.GeneratedMSBuildEditorConfig.editorconfig
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\GECA Control.AssemblyInfoInputs.cache
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\GECA Control.AssemblyInfo.cs
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\GECA Control.csproj.CoreCompileInputs.cache
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\GECA Control.dll
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\refint\GECA Control.dll
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\GECA Control.pdb
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\GECA Control.genruntimeconfig.cache
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\ref\GECA Control.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\GECA Control.csproj.AssemblyReference.cache
+C:\RINDRA\MCB\Project\GECA Control\obj\Debug\net8.0\GECA Control.csproj.CopyComplete
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\appsettings.json
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Hosting.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Logging.Configuration.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Logging.Console.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Logging.Debug.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Logging.EventLog.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Logging.EventSource.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+C:\RINDRA\MCB\Project\GECA Control\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll

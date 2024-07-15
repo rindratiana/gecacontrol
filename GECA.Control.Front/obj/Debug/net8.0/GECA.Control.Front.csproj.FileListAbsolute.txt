@@ -1,0 +1,35 @@
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\appsettings.Development.json
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\appsettings.json
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\GECA.Control.Front.staticwebassets.runtime.json
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\GECA.Control.Front.exe
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\GECA.Control.Front.deps.json
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\GECA.Control.Front.runtimeconfig.json
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\GECA.Control.Front.dll
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\GECA.Control.Front.pdb
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.GeneratedMSBuildEditorConfig.editorconfig
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.AssemblyInfoInputs.cache
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.AssemblyInfo.cs
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.csproj.CoreCompileInputs.cache
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.MvcApplicationPartsAssemblyInfo.cache
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.RazorAssemblyInfo.cache
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.RazorAssemblyInfo.cs
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.sourcelink.json
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\staticwebassets.build.json
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\staticwebassets.development.json
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\staticwebassets\msbuild.GECA.Control.Front.Microsoft.AspNetCore.StaticWebAssets.props
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\staticwebassets\msbuild.build.GECA.Control.Front.props
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.GECA.Control.Front.props
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.GECA.Control.Front.props
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\staticwebassets.pack.json
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\scopedcss\bundle\GECA.Control.Front.styles.css
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\scopedcss\projectbundle\GECA.Control.Front.bundle.scp.css
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.dll
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\refint\GECA.Control.Front.dll
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.pdb
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.genruntimeconfig.cache
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\ref\GECA.Control.Front.dll
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\GECA Control.dll
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\bin\Debug\net8.0\GECA Control.pdb
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Control.Front.csproj.AssemblyReference.cache
+D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA.Control.Front\obj\Debug\net8.0\GECA.Con.73448272.Up2Date

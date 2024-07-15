@@ -1,47 +1,55 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using GECA_Control.Models;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GECA_Control.Services
 {
-    public class ApplicationService : BackgroundService
+    public class ApplicationService : JsonConverter<Coordinates[,]>
     {
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        public override Coordinates[,] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            Console.WriteLine("Service started.");
+            throw new NotImplementedException("Deserialization of Coordinates[,] is not implemented.");
+        }
+        public static string SerializeCoordinatesArray(Coordinates[,] multiArray)
+        {
+            var options = new JsonSerializerOptions();
+            options.Converters.Add(new ApplicationService());
 
-            // Exemple de gestion des arguments
-            if (Environment.GetCommandLineArgs().Length > 1)
+            return JsonSerializer.Serialize(multiArray, options);
+        }
+        public static Coordinates[,] DeserializeCoordinatesArray(string json)
+        {
+            var options = new JsonSerializerOptions();
+            options.Converters.Add(new ApplicationService());
+
+            return JsonSerializer.Deserialize<Coordinates[,]>(json, options);
+        }
+        public override void Write(Utf8JsonWriter writer, Coordinates[,] value, JsonSerializerOptions options)
+        {
+            writer.WriteStartArray();
+
+            int rows = value.GetLength(0);
+            int cols = value.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
             {
-                string parametre = Environment.GetCommandLineArgs()[1];
-                Console.WriteLine($"Paramètre reçu depuis la console : {parametre}");
+                writer.WriteStartArray();
 
-                // Modifier l'état en fonction du paramètre
-                if (parametre == "start")
+                for (int j = 0; j < cols; j++)
                 {
-                    Console.WriteLine("Démarrage en cours...");
+                    JsonSerializer.Serialize(writer, value[i, j], options);
                 }
-                else if (parametre == "stop")
-                {
-                    Console.WriteLine("Arrêt en cours...");
-                }
-                else
-                {
-                    Console.WriteLine("Commande non reconnue.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Aucun paramètre n'a été spécifié depuis la console.");
+
+                writer.WriteEndArray();
             }
 
-            // Attendre la fin de l'exécution (simulé ici)
-            await Task.Delay(100000000);
-
-            Console.WriteLine("Fin du service.");
+            writer.WriteEndArray();
         }
     }
 }

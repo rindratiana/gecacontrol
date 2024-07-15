@@ -16,6 +16,29 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function () {
+    $('#btnStep').click(function () {
+        var controlValue = $('#control').val();
+        var nbrStepValue = $('#nbrStep').val();
+        if (controlValue && nbrStepValue) {
+            $.ajax({
+                url: '/Home/Control',  // Replace with your endpoint URL
+                method: 'POST',
+                data:{
+                    direction: controlValue,
+                    step: parseInt(nbrStepValue, 10)
+                },
+                success: function (response) {
+                    UpdateMap(response);
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+    });
+});
+
 function UpdateMap(responseString) {
     var response = JSON.parse(responseString);
 
@@ -36,5 +59,5 @@ function UpdateMap(responseString) {
 
         $table.append($row)
     }
-    $('#matrix-display').append($table);
+    $('#matrix-display').empty().append($table);
 }

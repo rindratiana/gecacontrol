@@ -59,3 +59,17 @@ D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Contro
 D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\refint\GECA Control.dll
 D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Control.pdb
 D:\RINDRA\Perso\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\ref\GECA Control.dll
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\bin\Debug\net8.0\appsettings.json
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\bin\Debug\net8.0\GECA Control.deps.json
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\bin\Debug\net8.0\GECA Control.dll
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\bin\Debug\net8.0\GECA Control.pdb
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Control.csproj.AssemblyReference.cache
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Control.GeneratedMSBuildEditorConfig.editorconfig
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Control.AssemblyInfoInputs.cache
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Control.AssemblyInfo.cs
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Control.csproj.CoreCompileInputs.cache
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Control.sourcelink.json
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Control.dll
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\refint\GECA Control.dll
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\GECA Control.pdb
+C:\RINDRA\MCB\Projet\gecacontrol\GECA Control\obj\Debug\net8.0\ref\GECA Control.dll

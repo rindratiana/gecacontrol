@@ -28,8 +28,8 @@ namespace GECA_Control.Models
         /// <exception cref="ArgumentException">Thrown when the key is invalid.</exception>
         private string ControlKey(string key)
         {
-            string[] keyArray = { "U","D","L","R" };
-            bool inArray = keyArray.Where(x=>x == key).Any();
+            string[] keyArray = { "u","d","l","r" };
+            bool inArray = keyArray.Where(x=>x.ToUpper() == key.ToUpper()).Any();
             if(inArray) return key;
             else throw new ArgumentException("One or more keys are invalid.");
         }

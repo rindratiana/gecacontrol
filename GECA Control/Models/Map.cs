@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GECA_Control.Models
@@ -10,7 +11,8 @@ namespace GECA_Control.Models
     {
         private int mapX;
         private int mapY;
-        public Coordinates[,] Matrix { get; set; }
+        public static Coordinates[,] Matrix { get; set; }
+        public Map() { }
         public int MapX
         {
             get { return mapX; }
@@ -31,11 +33,16 @@ namespace GECA_Control.Models
                 mapY = value;
             }
         }
-        public Map(int x, int y)
+        [JsonConstructor]
+        public Map(int mapX, int mapY)
         {
-            MapX = x;
-            MapY = y;
-            Matrix = CreateMap();
+            MapX = mapX;
+            MapY = mapY;
+            if (Matrix == null)
+            {
+
+                Matrix = CreateMap();
+            }
         }
         /// <summary>
         /// Initializes the map.
@@ -108,10 +115,26 @@ namespace GECA_Control.Models
         /// Update the Map
         /// </summary>
         /// <param name="caterpillar"></param>
-        public void UpdateMap(Caterpillar caterpillar)
+        public static void UpdateMap(Caterpillar caterpillar)
         {
             Matrix[caterpillar.Head.X, caterpillar.Head.Y].Value = caterpillar.Head.Value;
             Matrix[caterpillar.Tail.X, caterpillar.Tail.Y].Value = caterpillar.Tail.Value;
+        }
+
+        /// <summary>
+        /// Checks if the head of the caterpillar overlaps with the spice.
+        /// </summary>
+        /// <param name="x">The x-coordinate of the caterpillar</param>
+        /// <param name="y">The y-coordinate of the caterpillar</param>
+        public static bool ControlSpice(Coordinates coordinates)
+        {
+            bool response = false;
+            if (Map.Matrix[coordinates.X, coordinates.Y].Value == '$')
+            {
+                Map.Matrix[coordinates.X, coordinates.Y].Value = '*';
+                response = true;
+            }
+            return response;
         }
     }
 }

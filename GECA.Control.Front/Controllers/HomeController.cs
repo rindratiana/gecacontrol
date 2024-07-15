@@ -1,6 +1,8 @@
 using GECA.Control.Front.Models;
+using GECA.Control.Front.Utile;
 using GECA_Control.Models;
 using GECA_Control.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -9,21 +11,34 @@ namespace GECA.Control.Front.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IConfiguration _config;
+        public HomeController(ILogger<HomeController> logger, IConfiguration config)
         {
             _logger = logger;
+            _config = config;
         }
         [HttpPost]
         public JsonResult Control(string direction,int step)
         {
+            var caterpillar = HttpContext.Session.Get<Caterpillar>("Caterpillar") ?? new Caterpillar();
+            var map = HttpContext.Session.Get<Map>("Map") ?? new Map(30, 30);
 
-            return Json(ApplicationService.SerializeCoordinatesArray(map.Matrix));
+            DoMove move = new DoMove(direction, step);
+            CaterpillarControlService.MoveCaterpillar(caterpillar, map, move, _config["PathLogCommand"]);
+
+            HttpContext.Session.Set("Caterpillar", caterpillar);
+            HttpContext.Session.Set("Map", map);
+
+            return Json(ApplicationService.SerializeCoordinatesArray(Map.Matrix));
         }
         [HttpGet]
         public JsonResult GetMap() {
-            Map map = new Map(30, 30);
-            return Json(ApplicationService.SerializeCoordinatesArray(map.Matrix));
+            var map = HttpContext.Session.Get<Map>("Map");
+            if (map == null){
+                map = new Map(30, 30);
+            }
+            HttpContext.Session.Set("Map", map);
+            return Json(ApplicationService.SerializeCoordinatesArray(Map.Matrix));
         }
 
         public IActionResult Index()

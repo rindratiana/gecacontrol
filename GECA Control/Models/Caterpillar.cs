@@ -32,50 +32,90 @@ namespace GECA_Control.Models
         /// <param name="move">The movement instruction from the Rider.</param>
         public void Move(DoMove move)
         {
-            switch (move.Key)
+            switch (move.Key.ToUpper())
             {
                 case "R":
                     for(int i = 0; i < move.Value; i++)
                     {
+                        Map.ControlSpice(Head);
+                        Head.Value = '*';
+                        Map.UpdateMap(this);
                         Head.X++;
-                        if(DistanceHeadTail() > 1 && !IsDiagonal())
+                        Head.Value = 'H';
+                        Map.UpdateMap(this);
+                        if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
+                            Tail.Value = '*';
+                            Map.UpdateMap(this);
                             Tail.Y = Head.Y;
                             Tail.X = Head.X - 1;
+                            Tail.Value = 'T';
+                            Map.UpdateMap(this);
                         }
+                        Map.UpdateMap(this);
                     }
                     break;
                 case "U":
                     for(int i = 0; i < move.Value; i++)
                     {
+                        Map.ControlSpice(Head);
+                        Head.Value = '*';
+                        Map.UpdateMap(this);
                         Head.Y++;
-                        if(DistanceHeadTail() > 1 && !IsDiagonal())
+                        Head.Value = 'H';
+                        Map.UpdateMap(this);
+                        if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
+                            Tail.Value = '*';
+                            Map.UpdateMap(this);
                             Tail.X = Head.X;
                             Tail.Y = Head.Y - 1;
+                            Tail.Value = 'T';
+                            Map.UpdateMap(this);
                         }
+                        Map.UpdateMap(this);
                     }
                     break;
                 case "L":
-                    for(int i = 0; i < move.Value; i++)
+                    for (int i = 0; i < move.Value; i++)
                     {
+                        Map.ControlSpice(Head);
+                        Head.Value = '*';
+                        Map.UpdateMap(this);
                         Head.X--;
-                        if(DistanceHeadTail() > 1 && !IsDiagonal())
+                        Head.Value = 'H';
+                        Map.UpdateMap(this);
+                        if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
+                            Tail.Value = '*';
+                            Map.UpdateMap(this);
                             Tail.X = Head.X + 1;
                             Tail.Y = Head.Y;
+                            Tail.Value = 'T';
+                            Map.UpdateMap(this);
                         }
+                        Map.UpdateMap(this);
                     }
                     break;
                 case "D":
-                    for(int i = 0; i < move.Value; i++)
+                    for (int i = 0; i < move.Value; i++)
                     {
+                        Map.ControlSpice(Head);
+                        Head.Value = '*';
+                        Map.UpdateMap(this);
                         Head.Y--;
+                        Head.Value = 'H';
+                        Map.UpdateMap(this);
                         if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
+                            Tail.Value = '*';
+                            Map.UpdateMap(this);
                             Tail.X = Head.X;
-                            Tail.Y= Head.Y+1;
+                            Tail.Y = Head.Y + 1;
+                            Tail.Value = 'T';
+                            Map.UpdateMap(this);
                         }
+                        Map.UpdateMap(this);
                     }
                     break;
                 default:
@@ -89,7 +129,7 @@ namespace GECA_Control.Models
         public bool IsDiagonal()
         {
             bool response = false;
-            if((Head.X + 1 == Tail.X && (Head.Y - 1 == Tail.Y || Head.Y+1 == Tail.Y)) /*Contol Up and Down left*/
+            if ((Head.X + 1 == Tail.X && (Head.Y - 1 == Tail.Y || Head.Y + 1 == Tail.Y)) /*Contol Up and Down left*/
                 || (Head.X - 1 == Tail.X && (Head.Y-1 == Tail.Y || Head.Y+1 == Tail.Y))) response = true; /*Contol Up and Down right*/
             return response;
         }

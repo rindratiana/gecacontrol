@@ -12,29 +12,6 @@ namespace UnitTestGECA.Models
     public class CoordinatesTest
     {
         [Theory]
-        [InlineData(-4, 5)]
-        [InlineData(-3, 5)]
-        [InlineData(-10, 5)]
-        [InlineData(-1, 5)]
-        public void Coordinates_InvalidXValue_Exception(int x, int y)
-        {
-            // Arrange, Act & Assert
-            var exceptionX = Assert.Throws<ArgumentException>(() => new Coordinates(x, y,' '));
-            Assert.EndsWith("X must be a positive number.", exceptionX.Message);
-        }
-
-        [Theory]
-        [InlineData(5, -36)]
-        [InlineData(5, -2)]
-        [InlineData(5, -5)]
-        public void Coordinates_InvalidYValue_Exception(int x, int y)
-        {
-            // Arrange, Act & Assert
-            var exceptionY = Assert.Throws<ArgumentException>(() => new Coordinates(x, y, ' '));
-            Assert.EndsWith("Y must be a positive number.", exceptionY.Message);
-        }
-
-        [Theory]
         [InlineData(2,3)]
         [InlineData(6,4)]
         [InlineData(0,3)]

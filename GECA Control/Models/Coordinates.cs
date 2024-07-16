@@ -10,6 +10,7 @@ namespace GECA_Control.Models
     {
         private int x;
         private int y;
+        public bool IsHead {  get; set; }
         public char Value { get; set; }
         public int X
         {

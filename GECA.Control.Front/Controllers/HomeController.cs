@@ -18,23 +18,35 @@ namespace GECA.Control.Front.Controllers
             _config = config;
         }
         [HttpPost]
+        public JsonResult GrowCaterpillar(int statusGrow)
+        {
+            var caterpillar = HttpContext.Session.Get<Caterpillar>("Caterpillar") ?? new Caterpillar();
+            var map = HttpContext.Session.Get<Map>("Map") ?? new Map(30, 30);
+            Caterpillar.controlObstacle = "";
+            caterpillar.GrowCaterpillar(statusGrow);
+            HttpContext.Session.Set("Caterpillar", caterpillar);
+            HttpContext.Session.Set("Map", map);
+            return Json(new { caterpillarJson = caterpillar, mapJson = ApplicationService.SerializeCoordinatesArray(Map.Matrix), message = Caterpillar.controlObstacle });
+        }
+        [HttpPost]
         public JsonResult Control(string direction,int step)
         {
             var caterpillar = HttpContext.Session.Get<Caterpillar>("Caterpillar") ?? new Caterpillar();
             var map = HttpContext.Session.Get<Map>("Map") ?? new Map(30, 30);
-
+            Caterpillar.controlObstacle = "";
             DoMove move = new DoMove(direction, step);
             CaterpillarControlService.MoveCaterpillar(caterpillar, map, move, _config["PathLogCommand"]);
 
             HttpContext.Session.Set("Caterpillar", caterpillar);
             HttpContext.Session.Set("Map", map);
 
-            return Json(new { caterpillarJson = caterpillar, mapJson = ApplicationService.SerializeCoordinatesArray(Map.Matrix) });
+            return Json(new { caterpillarJson = caterpillar, mapJson = ApplicationService.SerializeCoordinatesArray(Map.Matrix) ,message = Caterpillar.controlObstacle});
         }
         [HttpGet]
         public JsonResult GetMap() {
             var caterpillar = HttpContext.Session.Get<Caterpillar>("Caterpillar") ?? new Caterpillar();
             var map = HttpContext.Session.Get<Map>("Map") ?? new Map(30, 30);
+            Caterpillar.controlObstacle = "";
             HttpContext.Session.Set("Caterpillar", caterpillar);
             HttpContext.Session.Set("Map", map);
             return Json(new {caterpillarJson = caterpillar, mapJson = ApplicationService.SerializeCoordinatesArray(Map.Matrix) });

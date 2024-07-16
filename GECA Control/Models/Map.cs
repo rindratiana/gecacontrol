@@ -126,17 +126,20 @@ namespace GECA_Control.Models
         /// </summary>
         /// <param name="x">The x-coordinate of the caterpillar</param>
         /// <param name="y">The y-coordinate of the caterpillar</param>
-        public static bool ControlSpice(Coordinates coordinates)
+        public static void ControlObstacle(Coordinates coordinates)
         {
-            bool response = false;
             if(coordinates.X < 30 && coordinates.Y < 30 && coordinates.X >= 0 && coordinates.Y >= 0) { 
-            if (Map.Matrix[coordinates.X, coordinates.Y].Value == '$')
+                if (Map.Matrix[coordinates.X, coordinates.Y].Value == '$')
                 {
                     Map.Matrix[coordinates.X, coordinates.Y].Value = '*';
-                    response = true;
+                    Caterpillar.controlObstacle = "spice";
+                }
+                else if(Map.Matrix[coordinates.X, coordinates.Y].Value == 'B')
+                {
+                    Map.Matrix[coordinates.X, coordinates.Y].Value = '*';
+                    Caterpillar.controlObstacle = "booster";
                 }
             }
-            return response;
         }
     }
 }

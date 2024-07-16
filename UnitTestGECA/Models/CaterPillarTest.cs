@@ -9,6 +9,74 @@ namespace UnitTestGECA.Models
 {
     public class CaterPillarTest
     {
+        [Fact]
+        public void GrowCaterpillar_GrowUp_ValidGrow()
+        {
+            //Arrange
+            Caterpillar caterpillar = new Caterpillar
+            {
+                Head = new Coordinates(6, 6, 'H'),
+                Tail = new Coordinates(6, 5, 'T'),
+                Intermediate = new List<Coordinates>()
+            };
+            //Act
+            caterpillar.GrowCaterpillar(3);
+            //Assert
+            Assert.Equal(caterpillar.Tail.X, 6);
+            Assert.Equal(caterpillar.Tail.Y, 2);
+
+        }
+        [Fact]
+        public void GrowCaterpillar_GrowDown_ValidGrow()
+        {
+            //Arrange
+            Caterpillar caterpillar = new Caterpillar
+            {
+                Head = new Coordinates(1, 6, 'H'),
+                Tail = new Coordinates(1, 5, 'T'),
+                Intermediate = new List<Coordinates>()
+            };
+            //Act
+            caterpillar.GrowCaterpillar(3);
+            //Assert
+            Assert.Equal(caterpillar.Tail.X,1);
+            Assert.Equal(caterpillar.Tail.Y, 2);
+
+        }
+        [Fact]
+        public void GrowCaterpillar_GrowLeft_ValidGrow()
+        {
+            //Arrange
+            Caterpillar caterpillar = new Caterpillar
+            {
+                Head = new Coordinates(5, 3, 'H'),
+                Tail = new Coordinates(4, 3, 'T'),
+                Intermediate = new List<Coordinates>()
+            };
+            //Act
+            caterpillar.GrowCaterpillar(3);
+            //Assert
+            Assert.Equal(caterpillar.Tail.X, 1);
+            Assert.Equal(caterpillar.Tail.Y, 3);
+
+        }
+        [Fact]
+        public void GrowCaterpillar_GrowRight_ValidGrow()
+        {
+            //Arrange
+            Caterpillar caterpillar = new Caterpillar
+            {
+                Head = new Coordinates(2, 5, 'H'),
+                Tail = new Coordinates(3, 5, 'T'),
+                Intermediate = new List<Coordinates>()
+            };
+            //Act
+            caterpillar.GrowCaterpillar(3);
+            //Assert
+            Assert.Equal(caterpillar.Tail.X, 6);
+            Assert.Equal(caterpillar.Tail.Y, 5);
+
+        }
         [Theory]
         [InlineData(3, 5, 3, 4, "R", 1, 4, 5, 3, 4)] //Move Right 1 step case head on the tail
         [InlineData(3, 3, 3, 4, "R", 1, 4, 3, 3, 4)] //Move Right 1 step case head under the tail
@@ -34,9 +102,10 @@ namespace UnitTestGECA.Models
             //Arrange
             Caterpillar caterpillar = new Caterpillar
             {
-                Head = new Coordinates(headX, headY, 'H'),
-                Tail = new Coordinates(tailX, tailY, 'T')
+                Head = new Coordinates(headX, headY, '$'),
+                Tail = new Coordinates(tailX, tailY, '$')
             };
+            Map map = new Map(30, 30);
             DoMove move = new DoMove(commandKey, commandValue);
 
             //Act

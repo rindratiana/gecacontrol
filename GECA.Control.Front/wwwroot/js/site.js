@@ -8,7 +8,6 @@ $(document).ready(function() {
         method: 'GET',
         dataType: 'json',
         success: function (responseStr) {
-            console.log(responseStr);
             UpdateMap(responseStr);
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -23,13 +22,46 @@ $(document).ready(function () {
         var nbrStepValue = $('#nbrStep').val();
         if (controlValue && nbrStepValue) {
             $.ajax({
-                url: '/Home/Control',  // Replace with your endpoint URL
+                url: '/Home/Control',
                 method: 'POST',
                 data:{
                     direction: controlValue,
                     step: parseInt(nbrStepValue, 10)
                 },
                 success: function (response) {
+                    if (response.message === "booster") {
+                        Swal.fire({
+                            title: 'Information',
+                            text: 'Do you want to increase or decrease the caterpillar\'s size? It has just eaten a booster.',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonText: 'Yes',
+                            cancelButtonText: 'No'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $.ajax({
+                                    url: '/Home/GrowCaterpillar',
+                                    type: 'POST',
+                                    dataType: 'json',
+                                    data: { statusGrow: 1 },
+                                    success: function (response) {
+                                        UpdateMap(response);
+                                    },
+                                    error: function (xhr, status, error) {
+                                        console.error('Error:', error);
+                                        alert('Error occurred while processing growth request');
+                                        // Handle errors
+                                    }
+                                });
+                            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                                Swal.fire(
+                                    'Cancelled',
+                                    'Your action has been cancelled',
+                                    'error'
+                                );
+                            }
+                        });
+                    }
                     UpdateMap(response);
                 },
                 error: function (error) {
@@ -42,6 +74,8 @@ $(document).ready(function () {
 
 function UpdateMap(responseString) {
     var caterpillar = responseString.caterpillarJson;
+    console.log(caterpillar);
+
     var response = JSON.parse(responseString.mapJson);
 
     var maxX = response.length;
@@ -54,21 +88,30 @@ function UpdateMap(responseString) {
 
         for (var x = 0; x < maxX; x++) {
             var cell = response[x][y];
+            var $cell;
+
             if (x == caterpillar.head.x && y == caterpillar.head.y) {
-                var $cell = $('<td style="background-color: green;">').text(caterpillar.head.value);
-                $row.append($cell);
+                $cell = $('<td style="background-color: green;">').text(caterpillar.head.value);
             }
             else if (x == caterpillar.tail.x && y == caterpillar.tail.y) {
-                var $cell = $('<td style="background-color: green;">').text(caterpillar.tail.value);
-                $row.append($cell);
+                $cell = $('<td style="background-color: green;">').text(caterpillar.tail.value);
             }
             else {
-                var $cell = $('<td>').text(cell.Value);
-                $row.append($cell);
+                $cell = $('<td>').text(cell.Value);
             }
-        }
 
-        $table.append($row)
+            if (caterpillar.intermediate.length > 0) {
+                $.each(caterpillar.intermediate, function (index, item) {
+                    if (x == item.x && y == item.y) {
+                        $cell = $('<td style="background-color: green;">').text(item.value);
+                    }
+                });
+            }
+
+            $row.append($cell);
+        }
+        $table.append($row);
     }
+
     $('#matrix-display').empty().append($table);
 }

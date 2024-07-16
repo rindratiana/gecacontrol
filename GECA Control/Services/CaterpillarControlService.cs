@@ -19,7 +19,6 @@ namespace GECA_Control.Services
             caterpillar.Move(move);
             FileService.WriteFile(move, path);
             //Update the map based on the caterpillar's position.
-            Map.UpdateMap(caterpillar);
 
             //Print the map on the console
             //map.PrintMap();

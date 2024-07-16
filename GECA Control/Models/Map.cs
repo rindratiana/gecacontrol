@@ -129,10 +129,12 @@ namespace GECA_Control.Models
         public static bool ControlSpice(Coordinates coordinates)
         {
             bool response = false;
+            if(coordinates.X < 30 && coordinates.Y < 30 && coordinates.X >= 0 && coordinates.Y >= 0) { 
             if (Map.Matrix[coordinates.X, coordinates.Y].Value == '$')
-            {
-                Map.Matrix[coordinates.X, coordinates.Y].Value = '*';
-                response = true;
+                {
+                    Map.Matrix[coordinates.X, coordinates.Y].Value = '*';
+                    response = true;
+                }
             }
             return response;
         }

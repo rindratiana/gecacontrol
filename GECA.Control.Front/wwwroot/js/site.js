@@ -8,6 +8,7 @@ $(document).ready(function() {
         method: 'GET',
         dataType: 'json',
         success: function (responseStr) {
+            console.log(responseStr);
             UpdateMap(responseStr);
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -40,7 +41,8 @@ $(document).ready(function () {
 });
 
 function UpdateMap(responseString) {
-    var response = JSON.parse(responseString);
+    var caterpillar = responseString.caterpillarJson;
+    var response = JSON.parse(responseString.mapJson);
 
     var maxX = response.length;
     var maxY = response.reduce((max, row) => Math.max(max, row.length), 0);
@@ -52,9 +54,18 @@ function UpdateMap(responseString) {
 
         for (var x = 0; x < maxX; x++) {
             var cell = response[x][y];
-
-            var $cell = $('<td>').text(cell.Value);
-            $row.append($cell);
+            if (x == caterpillar.head.x && y == caterpillar.head.y) {
+                var $cell = $('<td style="background-color: green;">').text(caterpillar.head.value);
+                $row.append($cell);
+            }
+            else if (x == caterpillar.tail.x && y == caterpillar.tail.y) {
+                var $cell = $('<td style="background-color: green;">').text(caterpillar.tail.value);
+                $row.append($cell);
+            }
+            else {
+                var $cell = $('<td>').text(cell.Value);
+                $row.append($cell);
+            }
         }
 
         $table.append($row)

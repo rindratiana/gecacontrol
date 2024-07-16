@@ -37,90 +37,68 @@ namespace GECA_Control.Models
                 case "R":
                     for(int i = 0; i < move.Value; i++)
                     {
-                        Map.ControlSpice(Head);
-                        Head.Value = '*';
-                        Map.UpdateMap(this);
                         Head.X++;
-                        Head.Value = 'H';
-                        Map.UpdateMap(this);
+                        Map.ControlSpice(Head);
                         if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
-                            Tail.Value = '*';
-                            Map.UpdateMap(this);
                             Tail.Y = Head.Y;
                             Tail.X = Head.X - 1;
-                            Tail.Value = 'T';
-                            Map.UpdateMap(this);
                         }
-                        Map.UpdateMap(this);
+                        ControlArea();
                     }
                     break;
                 case "U":
                     for(int i = 0; i < move.Value; i++)
                     {
-                        Map.ControlSpice(Head);
-                        Head.Value = '*';
-                        Map.UpdateMap(this);
                         Head.Y++;
-                        Head.Value = 'H';
-                        Map.UpdateMap(this);
+                        Map.ControlSpice(Head);
                         if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
-                            Tail.Value = '*';
-                            Map.UpdateMap(this);
                             Tail.X = Head.X;
                             Tail.Y = Head.Y - 1;
-                            Tail.Value = 'T';
-                            Map.UpdateMap(this);
                         }
-                        Map.UpdateMap(this);
+                        ControlArea();
                     }
                     break;
                 case "L":
                     for (int i = 0; i < move.Value; i++)
                     {
-                        Map.ControlSpice(Head);
-                        Head.Value = '*';
-                        Map.UpdateMap(this);
                         Head.X--;
-                        Head.Value = 'H';
-                        Map.UpdateMap(this);
+                        Map.ControlSpice(Head);
                         if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
-                            Tail.Value = '*';
-                            Map.UpdateMap(this);
                             Tail.X = Head.X + 1;
                             Tail.Y = Head.Y;
-                            Tail.Value = 'T';
-                            Map.UpdateMap(this);
                         }
-                        Map.UpdateMap(this);
+                        ControlArea();
                     }
                     break;
                 case "D":
                     for (int i = 0; i < move.Value; i++)
                     {
-                        Map.ControlSpice(Head);
-                        Head.Value = '*';
-                        Map.UpdateMap(this);
                         Head.Y--;
-                        Head.Value = 'H';
-                        Map.UpdateMap(this);
+                        Map.ControlSpice(Head);
                         if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
-                            Tail.Value = '*';
-                            Map.UpdateMap(this);
                             Tail.X = Head.X;
                             Tail.Y = Head.Y + 1;
-                            Tail.Value = 'T';
-                            Map.UpdateMap(this);
                         }
-                        Map.UpdateMap(this);
+                        ControlArea();
                     }
                     break;
                 default:
                     break;
             }
+        }
+        /// <summary>
+        /// Control if the caterpillar crosses the zone on the map. 
+        /// </summary>
+        public void ControlArea()
+        {
+            if (Head.X >= 30) Head.X = 0;
+            else if (Head.Y >= 30) Head.Y = 0;
+            else if (Head.X < 0) Head.X = 29;
+            else if (Head.Y < 0) Head.Y = 29;
         }
         /// <summary>
         /// Checks if the tail is positioned diagonally relative to the head.

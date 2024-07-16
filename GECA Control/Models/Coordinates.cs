@@ -16,8 +16,8 @@ namespace GECA_Control.Models
             get { return x; }
             set
             {
-                if (value < 0)
-                    throw new ArgumentException("X must be a positive number.");
+                /*if (value < 0)
+                    throw new ArgumentException("X must be a positive number.");*/
                 x = value;
             }
         }
@@ -26,8 +26,8 @@ namespace GECA_Control.Models
             get { return y; }
             set
             {
-                if (value < 0)
-                    throw new ArgumentException("Y must be a positive number.");
+                /*if (value < 0)
+                    throw new ArgumentException("Y must be a positive number.");*/
                 y = value;
             }
         }

@@ -29,16 +29,15 @@ namespace GECA.Control.Front.Controllers
             HttpContext.Session.Set("Caterpillar", caterpillar);
             HttpContext.Session.Set("Map", map);
 
-            return Json(ApplicationService.SerializeCoordinatesArray(Map.Matrix));
+            return Json(new { caterpillarJson = caterpillar, mapJson = ApplicationService.SerializeCoordinatesArray(Map.Matrix) });
         }
         [HttpGet]
         public JsonResult GetMap() {
-            var map = HttpContext.Session.Get<Map>("Map");
-            if (map == null){
-                map = new Map(30, 30);
-            }
+            var caterpillar = HttpContext.Session.Get<Caterpillar>("Caterpillar") ?? new Caterpillar();
+            var map = HttpContext.Session.Get<Map>("Map") ?? new Map(30, 30);
+            HttpContext.Session.Set("Caterpillar", caterpillar);
             HttpContext.Session.Set("Map", map);
-            return Json(ApplicationService.SerializeCoordinatesArray(Map.Matrix));
+            return Json(new {caterpillarJson = caterpillar, mapJson = ApplicationService.SerializeCoordinatesArray(Map.Matrix) });
         }
 
         public IActionResult Index()

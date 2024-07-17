@@ -37,22 +37,25 @@ namespace GECA_Control.Models
         }
         public void ModificationIntermediate(DoMove move)
         {
-            Coordinates currentHead = Head;
+            Coordinates headTemp = new Coordinates
+            {
+                X = Head.X,
+                Y = Head.Y
+            };
+            int i = 0;
             foreach(var coordinates in Intermediate)
             {
-                /*Coordinates coordinateTemp = Intermediate.Where(c => c.X == currentHead.Y || Math.Abs(Head.Y - c.X) == 1).First();*/
                 Caterpillar temp = new Caterpillar
                 {
-                    Head = currentHead, Tail = coordinates 
+                    Head = headTemp,
+                    Tail = coordinates
                 };
-                temp.MoveIntermediate(move);
-                currentHead = temp.Tail;
+                temp.MoveIntermediate(move,i,Intermediate,Tail);
+                headTemp = temp.Tail;
+                i++;
             }
-            /*Tail = Intermediate[Intermediate.Count - 1];
-            Tail.Value = 'T';
-            Head.Value = 'H';*/
         }
-        public void MoveIntermediate(DoMove move)
+        public void MoveIntermediate(DoMove move,int indice,List<Coordinates> intermediate,Coordinates tail)
         {
             switch (move.Key.ToUpper())
             {
@@ -62,12 +65,28 @@ namespace GECA_Control.Models
                         Map.ControlObstacle(Head);
                         if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
-                            Head.X++;
-                            Tail.Y = Head.Y;
-                            Tail.X = Head.X - 1;
+                            intermediate[i].X = Head.X-1;
+                            intermediate[i].Y = Head.Y;
+                            /*tail.X = intermediate[i].X - 1;
+                            tail.Y = intermediate[i].Y;*/
                         }
                         ControlArea();
                     }
+                    /*Coordinates lastSegment = intermediate[intermediate.Count-1];
+                    Caterpillar cTemp = new Caterpillar
+                    {
+                        Head = lastSegment,
+                        Tail = tail
+                    };
+                    if(cTemp.DistanceHeadTail() > 1 && !cTemp.IsDiagonal()){
+                        tail.X = cTemp.Head.X-1;
+                        tail.Y = cTemp.Tail.Y;
+                    }
+                    else
+                    {
+                        tail.X = cTemp.Head.X;
+                        tail.Y = cTemp.Head.Y - 1;
+                    }*/
                     break;
                 case "U":
                     for (int i = 0; i < move.Value; i++)
@@ -124,11 +143,37 @@ namespace GECA_Control.Models
                     for(int i = 0; i < move.Value; i++)
                     {
                         Head.X++;
+                        Coordinates tempHead = Tail;
                         Map.ControlObstacle(Head);
                         if (DistanceHeadTail() > 1 && !IsDiagonal())
                         {
                             Tail.Y = Head.Y;
                             Tail.X = Head.X - 1;
+                        }
+                        int k = 0;
+                        
+                        foreach (var intermediate in Intermediate)
+                        {
+                            Caterpillar catTemp = new Caterpillar
+                            {
+                                Head = tempHead,
+                                Tail = intermediate,
+                            };
+                            if(catTemp.DistanceHeadTail() > 1 && !catTemp.IsDiagonal())
+                            {
+                                if(tempHead.X == catTemp.Tail.X) { 
+                                    //Intermediate[k].X = tempHead.X-1;
+                                    Intermediate[k].Y = tempHead.Y-1;
+                                }
+                                else
+                                {
+                                    Intermediate[k].Y = tempHead.Y;
+                                    Intermediate[k].X = tempHead.X - 1;
+                                }
+
+                            }
+                            tempHead = Intermediate[k];
+                            k++;
                         }
                         ControlArea();
                     }
@@ -175,9 +220,9 @@ namespace GECA_Control.Models
                 default:
                     break;
             }
-            if (Intermediate.Count > 0) { 
+            /*if (Intermediate.Count > 0) { 
                 ModificationIntermediate(move);
-            }
+            }*/
         }
         /// <summary>
         /// Control if the caterpillar crosses the zone on the map. 
@@ -200,6 +245,14 @@ namespace GECA_Control.Models
                 || (Head.X - 1 == Tail.X && (Head.Y-1 == Tail.Y || Head.Y+1 == Tail.Y))) response = true; /*Contol Up and Down right*/
             return response;
         }
+
+        public bool IsDiagonal(Coordinates head,Coordinates tail)
+        {
+            bool response = false;
+            if ((head.X + 1 == tail.X && (head.Y - 1 == tail.Y || head.Y + 1 == tail.Y)) /*Contol Up and Down left*/
+                || (head.X - 1 == tail.X && (head.Y - 1 == tail.Y || head.Y + 1 == Tail.Y))) response = true; /*Contol Up and Down right*/
+            return response;
+        }
         /// <summary>
         /// Calculate the Euclidean distance between the head and the tail
         /// </summary>
@@ -218,36 +271,37 @@ namespace GECA_Control.Models
         public void GrowCaterpillar(int nbrSegments)
         {
 
-            Coordinates currentTail = Tail;
+            //Coordinates currentTail = Tail;
+            Coordinates temp = new Coordinates();
+            temp.Value = '0';
             for (int i = 0; i < nbrSegments; i++)
             {
-                Coordinates newSegmentCoordinates = new Coordinates(currentTail.X, currentTail.Y,'0');
-                Intermediate.Add(newSegmentCoordinates);
-
                 if (Head.X == Tail.X) // Vertical
                 {
                     if (Head.Y > Tail.Y)
                     {
-                        currentTail.Y--;
+                        temp.Y = Tail.Y - 1;
                     }
                     else
                     {
-                        currentTail.Y++;
+                        temp.Y = Tail.Y + 1;
                     }
+                    temp.X = Tail.X;
                 }
                 else if (Head.Y == Tail.Y) // Horizontal
                 {
                     if (Head.X > Tail.X)
                     {
-                        currentTail.X--;
+                        temp.X = Tail.X - 1;
                     }
                     else
                     {
-                        currentTail.X++;
+                        temp.X = Tail.X + 1;
                     }
+                    temp.Y = Tail.Y;
                 }
+                Intermediate.Add(temp);
             }
-            Tail = currentTail; // Update Tail
         }
     }
 }

@@ -3,15 +3,8 @@
   "WorkspaceRootPath": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA Control\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{22A25BF4-E613-4D6B-9E0C-45E4FA0E9BA5}|..\\GECA.Control.Front\\GECA.Control.Front.csproj|d:\\rindra\\perso\\mcb\\projet\\gecacontrol\\geca.control.front\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C58D5FCD-A907-4F66-8194-D32B8FF1EF96}|GECA Control.csproj|d:\\rindra\\perso\\mcb\\projet\\gecacontrol\\geca control\\models\\caterpillar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C58D5FCD-A907-4F66-8194-D32B8FF1EF96}|GECA Control.csproj|solutionrelative:models\\caterpillar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C58D5FCD-A907-4F66-8194-D32B8FF1EF96}|GECA Control.csproj|d:\\rindra\\perso\\mcb\\projet\\gecacontrol\\geca control\\models\\coordinates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C58D5FCD-A907-4F66-8194-D32B8FF1EF96}|GECA Control.csproj|solutionrelative:models\\coordinates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C58D5FCD-A907-4F66-8194-D32B8FF1EF96}|GECA Control.csproj|d:\\rindra\\perso\\mcb\\projet\\gecacontrol\\geca control\\services\\caterpillarcontrolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,8 +14,15 @@
       "AbsoluteMoniker": "D:0:0:{22A25BF4-E613-4D6B-9E0C-45E4FA0E9BA5}|..\\GECA.Control.Front\\GECA.Control.Front.csproj|d:\\rindra\\perso\\mcb\\projet\\gecacontrol\\geca.control.front\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C58D5FCD-A907-4F66-8194-D32B8FF1EF96}|GECA Control.csproj|d:\\rindra\\perso\\mcb\\projet\\gecacontrol\\geca control\\models\\coordinates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C58D5FCD-A907-4F66-8194-D32B8FF1EF96}|GECA Control.csproj|solutionrelative:models\\coordinates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C58D5FCD-A907-4F66-8194-D32B8FF1EF96}|GECA Control.csproj|d:\\rindra\\perso\\mcb\\projet\\gecacontrol\\geca control\\models\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C58D5FCD-A907-4F66-8194-D32B8FF1EF96}|GECA Control.csproj|solutionrelative:models\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22A25BF4-E613-4D6B-9E0C-45E4FA0E9BA5}|..\\GECA.Control.Front\\GECA.Control.Front.csproj|d:\\rindra\\perso\\mcb\\projet\\gecacontrol\\geca.control.front\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22A25BF4-E613-4D6B-9E0C-45E4FA0E9BA5}|..\\GECA.Control.Front\\GECA.Control.Front.csproj|d:\\rindra\\perso\\mcb\\projet\\gecacontrol\\geca.control.front\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
@@ -38,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "site.js",
               "DocumentMoniker": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA.Control.Front\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "..\\GECA.Control.Front\\wwwroot\\js\\site.js",
               "ToolTip": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA.Control.Front\\wwwroot\\js\\site.js",
               "RelativeToolTip": "..\\GECA.Control.Front\\wwwroot\\js\\site.js",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAuwD0AAABDAAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAAuwD0AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-07-15T13:00:12.186Z",
               "IsPinned": true,
@@ -60,65 +60,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Coordinates.cs",
               "DocumentMoniker": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA Control\\Models\\Coordinates.cs",
               "RelativeDocumentMoniker": "Models\\Coordinates.cs",
               "ToolTip": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA Control\\Models\\Coordinates.cs",
               "RelativeToolTip": "Models\\Coordinates.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAuwBMAAABSAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAIA9wCgAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-16T14:35:14.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Caterpillar.cs",
               "DocumentMoniker": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA Control\\Models\\Caterpillar.cs",
               "RelativeDocumentMoniker": "Models\\Caterpillar.cs",
               "ToolTip": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA Control\\Models\\Caterpillar.cs",
               "RelativeToolTip": "Models\\Caterpillar.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAswE0AAAAVAAAA",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAewJ4AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-16T06:12:54.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "CaterpillarControlService.cs",
               "DocumentMoniker": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA Control\\Services\\CaterpillarControlService.cs",
               "RelativeDocumentMoniker": "Services\\CaterpillarControlService.cs",
               "ToolTip": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA Control\\Services\\CaterpillarControlService.cs",
               "RelativeToolTip": "Services\\CaterpillarControlService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAYwBkAAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAIAwwBIAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-15T14:52:47.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA.Control.Front\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "..\\GECA.Control.Front\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA.Control.Front\\Controllers\\HomeController.cs",
               "RelativeToolTip": "..\\GECA.Control.Front\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwCAAAAAIAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAowCUAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-15T13:25:12.289Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Map.cs",
               "DocumentMoniker": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA Control\\Models\\Map.cs",
               "RelativeDocumentMoniker": "Models\\Map.cs",
               "ToolTip": "D:\\RINDRA\\Perso\\MCB\\Projet\\gecacontrol\\GECA Control\\Models\\Map.cs",
               "RelativeToolTip": "Models\\Map.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAA3wIAAAAAbAAAA",
+              "ViewState": "AQIAAHUAAAAAAAAAAIA3wIAAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-15T13:02:33.553Z",
               "EditorCaption": ""
@@ -133,8 +133,7 @@
               "RelativeToolTip": "..\\GECA.Control.Front\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAADEAAABkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-15T12:59:11.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-15T12:59:11.681Z"
             },
             {
               "$type": "Document",
@@ -146,8 +145,7 @@
               "RelativeToolTip": "..\\GECA.Control.Front\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-15T12:54:29.589Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-15T12:54:29.589Z"
             }
           ]
         }

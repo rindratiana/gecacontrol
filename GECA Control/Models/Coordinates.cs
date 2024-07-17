@@ -38,5 +38,6 @@ namespace GECA_Control.Models
             Y = y;
             Value = value;
         }
+        public Coordinates() { }
     }
 }

@@ -24,6 +24,12 @@ namespace GECA.Control.Front.Controllers
             var map = HttpContext.Session.Get<Map>("Map") ?? new Map(30, 30);
             Caterpillar.controlObstacle = "";
             caterpillar.GrowCaterpillar(statusGrow);
+            if (caterpillar.Intermediate.Count > 0)
+            {
+                caterpillar.Tail.Value = '0';
+                caterpillar.UpdateMatrix();
+                caterpillar.Intermediate[caterpillar.Intermediate.Count - 1].Value = 'T';
+            }
             HttpContext.Session.Set("Caterpillar", caterpillar);
             HttpContext.Session.Set("Map", map);
             return Json(new { caterpillarJson = caterpillar, mapJson = ApplicationService.SerializeCoordinatesArray(Map.Matrix), message = Caterpillar.controlObstacle });
@@ -36,7 +42,12 @@ namespace GECA.Control.Front.Controllers
             Caterpillar.controlObstacle = "";
             DoMove move = new DoMove(direction, step);
             CaterpillarControlService.MoveCaterpillar(caterpillar, map, move, _config["PathLogCommand"]);
-
+            if (caterpillar.Intermediate.Count > 0)
+            {
+                caterpillar.Tail.Value = '0';
+                caterpillar.UpdateMatrix();
+                caterpillar.Intermediate[caterpillar.Intermediate.Count - 1].Value = 'T';
+            }
             HttpContext.Session.Set("Caterpillar", caterpillar);
             HttpContext.Session.Set("Map", map);
 
@@ -44,8 +55,9 @@ namespace GECA.Control.Front.Controllers
         }
         [HttpGet]
         public JsonResult GetMap() {
-            var caterpillar = HttpContext.Session.Get<Caterpillar>("Caterpillar") ?? new Caterpillar();
-            var map = HttpContext.Session.Get<Map>("Map") ?? new Map(30, 30);
+            HttpContext.Session.Clear();
+            var caterpillar =  new Caterpillar();
+            var map = new Map(30, 30);
             Caterpillar.controlObstacle = "";
             HttpContext.Session.Set("Caterpillar", caterpillar);
             HttpContext.Session.Set("Map", map);
@@ -54,6 +66,7 @@ namespace GECA.Control.Front.Controllers
 
         public IActionResult Index()
         {
+            HttpContext.Session.Clear();
             return View();
         }
 

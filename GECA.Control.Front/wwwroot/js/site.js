@@ -62,6 +62,19 @@ $(document).ready(function () {
                             }
                         });
                     }
+                    else if (response.message === "obstacles") {
+                        Swal.fire({
+                            title: 'Information',
+                            text: "The caterpillar hit an obstacle.",
+                            icon: 'warning',
+                            confirmButtonText: 'Ok',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                location.reload();
+                            }
+                        });
+                        location.reload();
+                    }
                     UpdateMap(response);
                 },
                 error: function (error) {

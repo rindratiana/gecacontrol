@@ -16,13 +16,23 @@ namespace GECA_Control.Services
         /// <returns>The caterpillar with an updated position.</returns>
         public static void MoveCaterpillar(Caterpillar caterpillar,Map map,DoMove move,string path)
         {
-            caterpillar.Move(move);
+            caterpillar.Move(move,false);
+            int k = 0;
+            Coordinates tempHead = caterpillar.Tail;
+            foreach (var intermediate in caterpillar.Intermediate)
+            {
+                Caterpillar catTemp = new Caterpillar
+                {
+                    Head = tempHead,
+                    Tail = intermediate,
+                };
+                catTemp.Move(move,true);
+                caterpillar.Intermediate[k].X = catTemp.Tail.X;
+                caterpillar.Intermediate[k].Y = catTemp.Tail.Y;
+                tempHead = catTemp.Tail;
+                k++;
+            }
             FileService.WriteFile(move, path);
-            //Update the map based on the caterpillar's position.
-
-            //Print the map on the console
-            //map.PrintMap();
-            //return caterpillar;
         }
     }
 }

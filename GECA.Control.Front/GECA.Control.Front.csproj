@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GECA Control\GECA Control.csproj" />
+    <ProjectReference Include="..\UnitTestGECA\UnitTestGECA.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GECA Control">
+      <HintPath>..\GECA Control\bin\Debug\net8.0\GECA Control.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

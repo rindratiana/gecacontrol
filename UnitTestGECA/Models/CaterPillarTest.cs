@@ -20,10 +20,10 @@ namespace UnitTestGECA.Models
                 Intermediate = new List<Coordinates>()
             };
             //Act
-            caterpillar.GrowCaterpillar(3);
+            caterpillar.GrowCaterpillar(1);
             //Assert
-            Assert.Equal(caterpillar.Tail.X, 6);
-            Assert.Equal(caterpillar.Tail.Y, 2);
+            Assert.Equal(caterpillar.Intermediate[0].X, 6);
+            Assert.Equal(caterpillar.Intermediate[0].Y, 4);
 
         }
         [Fact]
@@ -37,10 +37,10 @@ namespace UnitTestGECA.Models
                 Intermediate = new List<Coordinates>()
             };
             //Act
-            caterpillar.GrowCaterpillar(3);
+            caterpillar.GrowCaterpillar(1);
             //Assert
-            Assert.Equal(caterpillar.Tail.X,1);
-            Assert.Equal(caterpillar.Tail.Y, 2);
+            Assert.Equal(caterpillar.Intermediate[0].X, 1);
+            Assert.Equal(caterpillar.Intermediate[0].Y, 4);
 
         }
         [Fact]
@@ -54,10 +54,10 @@ namespace UnitTestGECA.Models
                 Intermediate = new List<Coordinates>()
             };
             //Act
-            caterpillar.GrowCaterpillar(3);
+            caterpillar.GrowCaterpillar(1);
             //Assert
-            Assert.Equal(caterpillar.Tail.X, 1);
-            Assert.Equal(caterpillar.Tail.Y, 3);
+            Assert.Equal(caterpillar.Intermediate[0].X, 3);
+            Assert.Equal(caterpillar.Intermediate[0].Y, 3);
 
         }
         [Fact]
@@ -71,10 +71,10 @@ namespace UnitTestGECA.Models
                 Intermediate = new List<Coordinates>()
             };
             //Act
-            caterpillar.GrowCaterpillar(3);
+            caterpillar.GrowCaterpillar(1);
             //Assert
-            Assert.Equal(caterpillar.Tail.X, 6);
-            Assert.Equal(caterpillar.Tail.Y, 5);
+            Assert.Equal(caterpillar.Intermediate[0].X, 4);
+            Assert.Equal(caterpillar.Intermediate[0].Y, 5);
 
         }
         [Theory]
@@ -109,7 +109,7 @@ namespace UnitTestGECA.Models
             DoMove move = new DoMove(commandKey, commandValue);
 
             //Act
-            caterpillar.Move(move);
+            caterpillar.Move(move,false);
             //Assert
             Assert.Equal(caterpillar.Head.X, headXExpect);
             Assert.Equal(caterpillar.Head.Y, headYExpect);

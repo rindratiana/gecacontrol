@@ -40,7 +40,6 @@ namespace GECA_Control.Models
             MapY = mapY;
             if (Matrix == null)
             {
-
                 Matrix = CreateMap();
             }
         }
@@ -138,6 +137,11 @@ namespace GECA_Control.Models
                 {
                     Map.Matrix[coordinates.X, coordinates.Y].Value = '*';
                     Caterpillar.controlObstacle = "booster";
+                }
+                else if (Map.Matrix[coordinates.X, coordinates.Y].Value == '#')
+                {
+                    Map.Matrix[coordinates.X, coordinates.Y].Value = '*';
+                    Caterpillar.controlObstacle = "obstacles";
                 }
             }
         }
